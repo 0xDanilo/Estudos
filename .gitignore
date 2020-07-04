@@ -1,0 +1,17 @@
+# Ignore tudo:
+*
+
+# Exceto...
+!.gitignore
+!*.js
+!*.c
+!*.rs
+!*.py
+!*.md
+!*.txt
+!*.cpp
+!*.h
+!*makefile
+!*/
+
+# etc...
