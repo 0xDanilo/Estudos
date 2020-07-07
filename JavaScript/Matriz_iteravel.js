@@ -15,11 +15,39 @@ class Matriz {
         return this.conteudo[y * this.largura +x];
     }
 
-    set(x, y, valor) {
-        return this.conteudo[y * this.largura + x] = valor;
+    set(x, y, value) {
+        return this.conteudo[y * this.largura + x] = value;
     }
 }
 
-let matriz2x2 = new Matriz(2,2);
+class MatrizIterador {
+    constructor(matriz) {
+        this.x = 0;
+        this.y = 0;
+        this.matriz = matriz;
+    }
 
-console.log(matriz2x2);
+    next() {
+        if (this.y == this.matriz.altura) return {done: true};
+
+        let value = {x: this.x,
+                     y: this.y,
+                    value: this.matriz.get(this.x, this.y)};
+        this.x++;
+
+        if (this.x == this.matriz.largura) {
+            this.x = 0;
+            this.y++;
+        }
+        return {value, done: false};
+    }
+}
+
+Matriz.prototype[Symbol.iterator] = function() {
+    return new MatrizIterador(this);
+}
+
+let matriz = new Matriz(2,2, (x,y) => `value ${x}, ${y}`);
+for (let {x, y, value} of matriz) {
+    console.log(x, y, value);
+}
