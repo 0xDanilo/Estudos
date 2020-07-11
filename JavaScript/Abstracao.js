@@ -13,3 +13,12 @@ console.log(etiquetas);
 
 //Imprime a tabuada do 7:
 repetir(11, i => {console.log(`7 x ${i} = ${7 * i}`)});
+
+//Funções de Ordem-Maior
+/*
+Usando "forEach" que fornece algo como um for/of loop em
+uma função de ordem-maior*/
+
+etiquetas.forEach(a => {console.log(a)});
+
+
