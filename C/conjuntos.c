@@ -15,9 +15,13 @@ int main() {
 //Variáveis utilizadas para o loop:
     int i, j;
    
+    int elementosArrayX = sizeof(x)/sizeof(int);
+    int elementosArrayY = sizeof(y)/sizeof(int);
+
+
     printf("R1 = "); 
-    for(i = 0; i < 6; i++) {
-        for (j = 0; j < 6; j++) {
+    for(i = 0; i < elementosArrayX; i++) {
+        for (j = 0; j < elementosArrayY; j++) {
             /*
             Aqui fica a condição para a combinação de conjuntos {x, y}. 
             Nesse exemplo a combinação foi "x + y > 10".
@@ -29,8 +33,8 @@ int main() {
     }
 
     printf("\nR2 = "); 
-    for(i = 0; i < 6; i++) {
-        for (j = 0; j < 6; j++) {
+    for(i = 0; i < elementosArrayX; i++) {
+        for (j = 0; j < elementosArrayY; j++) {
             if (x[i] == 2 * y[j]) {
                 printf("{%i, %i} ", x[i], y[j]);
             }
@@ -38,8 +42,8 @@ int main() {
     }
 
     printf("\nR3 = "); 
-    for(i = 0; i < 6; i++) {
-        for (j = 0; j < 6; j++) {
+    for(i = 0; i < elementosArrayX; i++) {
+        for (j = 0; j < elementosArrayY; j++) {
             if (x[i] > y[j]) {
                 printf("{%i, %i} ", x[i], y[j]);
             }
