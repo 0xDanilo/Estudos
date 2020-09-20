@@ -19,7 +19,7 @@ int main() {
     for(i = 0; i < 6; i++) {
         for (j = 0; j < 6; j++) {
             /*
-            Aqui fica condição para a combinação de conjuntos {x, y}. 
+            Aqui fica a condição para a combinação de conjuntos {x, y}. 
             Nesse exemplo a combinação foi "x + y > 10".
             */
             if (x[i] + y[j] > 10) {
