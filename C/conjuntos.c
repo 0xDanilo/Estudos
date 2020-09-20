@@ -1,5 +1,5 @@
 /*
-Pra resolver um exercício de Logica para Computação combinando algoritmos
+Resolvendo um exercício de Lógica para Computação combinando algoritmos
 na busca do conjunto correto:
 */
 
