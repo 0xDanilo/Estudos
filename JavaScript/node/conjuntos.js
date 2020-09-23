@@ -13,7 +13,6 @@ let y = [1,2,3,5,8,13];
 process.stdout.write(`R1 =`);
 for (let i = 0; i < x.length; i++) {
     for (let j = 0; j < y.length; j++) {
-        //console.log(`{${x[i]}, ${y[j]}}`);
         if (x[i] + y[j] > 10) {
         process.stdout.write(` {${x[i]}, ${y[j]}}`);
         }
@@ -23,7 +22,6 @@ for (let i = 0; i < x.length; i++) {
 process.stdout.write(`\nR2 =`);
 for (let i = 0; i < x.length; i++) {
     for (let j = 0; j < y.length; j++) {
-        //console.log(`{${x[i]}, ${y[j]}}`);
         if (x[i] == 2 * y[j]) {
         process.stdout.write(` {${x[i]}, ${y[j]}}`);
         }
@@ -33,7 +31,6 @@ for (let i = 0; i < x.length; i++) {
 process.stdout.write(`\nR3 =`);
 for (let i = 0; i < x.length; i++) {
     for (let j = 0; j < y.length; j++) {
-        //console.log(`{${x[i]}, ${y[j]}}`);
         if (x[i] > y[j]) {
         process.stdout.write(` {${x[i]}, ${y[j]}}`);
         }
