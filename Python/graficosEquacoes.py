@@ -23,7 +23,5 @@ grafico.ylabel('X')
 grafico.xlabel('Y')
 grafico.legend(loc='upper left')
 
-  
-
 # Exibe o gráfico
 grafico.show() 
