@@ -23,7 +23,11 @@ int main() {
     printf("Número de vezes que o primeiro evento e o segundo ocorreram: ");
     scanf("%i", &n11);
 
+//passa os argumentos para a função e armazena o resultado na variável
     correlacao = phi(n00, n01, n10, n11);
 
+//imprime o resultado na tela
     printf("Correlação de: %0.9f ", correlacao);
+
+    return 0;
 }
