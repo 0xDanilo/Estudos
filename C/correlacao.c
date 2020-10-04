@@ -14,6 +14,7 @@ int main() {
     float correlacao;
     int n00, n01, n10, n11;
 
+//solicita os dados para as variáveis
     printf("Número de vezes que nenhum dos evento ocorreram: ");
     scanf("%i", &n00);
     printf("Número de vezes que o primeiro evento não ocorreu e o segundo ocorreu: ");
