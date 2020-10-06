@@ -12,4 +12,5 @@
 !*.cpp
 !*.h
 !*makefile
+!*.java
 !*/
