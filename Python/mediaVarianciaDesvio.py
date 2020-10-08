@@ -10,11 +10,11 @@ Dados = np.array( [[1, 3, 5],
 #   print(np.var(Dados))
 #   print(np.std(Dados))
 
-########################################
-##  Caso queira ver o resultado das operações acima,
-##  descomente-as e comente TUDO daqui para baixo,
-##  evitando que o grafico seja gerado.
-#######################################
+#########################################################
+##  Caso queira ver o resultado das operações acima,   ##
+##  descomente-as e comente TUDO daqui para baixo,     ##
+##  evitando que o grafico seja gerado.                ##
+#########################################################
 
 media = np.average(Dados) 
 desvioPadrao = np.std(Dados) 
