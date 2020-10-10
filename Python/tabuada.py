@@ -1,0 +1,1 @@
+print([7*x for x in range(11)])
