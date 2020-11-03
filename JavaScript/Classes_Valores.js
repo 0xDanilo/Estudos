@@ -30,6 +30,3 @@ let quadradoPI = Math.pow(piValor.valor, 2);
 
 console.log(`Pi ao quadrado é ${quadradoPI}.`);
 console.log(`Onde a variável piValor é um: ${Object.getPrototypeOf(piValor)}`);
-
-
-
