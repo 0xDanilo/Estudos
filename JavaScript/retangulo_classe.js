@@ -1,7 +1,7 @@
 
 class Retangulo {
     constructor(altura, largura) {
-        this.altura = altura;
+        this.altura =  altura;
         this.largura = largura;
     }
 
@@ -9,7 +9,7 @@ class Retangulo {
         return this.altura * this.largura;
     }
     
-    cabe_dentro(x, y) {
+     cabe_dentro(x, y) {
         return x.largura > y.largura && x.altura > y.altura;
     }
 }
