@@ -19,3 +19,15 @@ for (const valores of Object.values(objeto_nao_iteravel)) {
 }
 console.log(soma2);
 
+// strings 
+
+let frequencia = [];
+
+for (let letra of "Sweet home Brazil") {
+    if (frequencia[letra]) {
+        frequencia[letra]++;
+    } else {
+        frequencia[letra] = 1;
+    }
+}
+console.log(frequencia);
