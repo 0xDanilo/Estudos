@@ -1,16 +1,15 @@
 
 #include <stdio.h>
 
-void imprimeMatriz(int y, int z, int array[][z]) {
-	int linhas, colunas;
+void imprimeMatriz( int totalLinhas, int totalCol, int matriz[][totalCol]) {
 
-	for (linhas = 0; linhas < y; linhas++)
+	for (size_t linhas = 0; linhas < totalLinhas; linhas++)
 	{
-    	for(colunas = 0; colunas < z; colunas++)
-    	{
-        	printf("%d     ", array[linhas][colunas]);
-    	}
-    	printf("\n");
+		for( size_t colunas = 0; colunas < totalCol; colunas++)
+		{
+	    	printf("%d     ", matriz[linhas][colunas]);
+		}
+		printf("\n");
 	}
 }
 
@@ -20,8 +19,14 @@ int main(void) {
 					{4, 5, 6, 7} ,   
 					{8, 9, 10, 11}  
 					};
+	
+	int totalLinhas = sizeof(a)/sizeof(a[0]);
+	int totalColunas = sizeof(a[0])/sizeof(a[0][0]);
 
-	imprimeMatriz(3, 4, a);
+	imprimeMatriz(totalLinhas, totalColunas, a);
+
+
+
 
 	return 0;
 }
