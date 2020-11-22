@@ -18,31 +18,31 @@ fn jogar(){
     //Uniforme
     let mut rng = rand::thread_rng();
     let i = Uniform::from(2..12);
-    let throw = i.sample(&mut rng);
+    let jogar_dados = i.sample(&mut rng);
     
-    if (throw == 7) || (throw == 11) {
-        println!("Você tirou {} e venceu!!\n", throw);
-    } else if (throw == 2) || (throw == 3) || (throw == 12) {
-        println!("CRAPS!! Você tirou {} perdeu. \n", throw);
+    if (jogar_dados == 7) || (jogar_dados == 11) {
+        println!("Você tirou {} e venceu!!\n", jogar_dados);
+    } else if (jogar_dados == 2) || (jogar_dados == 3) || (jogar_dados == 12) {
+        println!("CRAPS!! Você tirou {} perdeu. \n", jogar_dados);
         } else {
-            println!("Ponto!! Você tirou {}!\nVamos para a segunda jogada...", throw);
-            segunda_jogada(throw)
-        }
+            println!("Ponto!! Você tirou {}!\nVamos para a segunda jogada...", jogar_dados);
+            segunda_jogada(jogar_dados)
+            }
 }
 
 fn segunda_jogada(x: i32) {
     let mut rng = rand::thread_rng();
     let i = Uniform::from(2..11);
-    let throw = i.sample(&mut rng);
+    let jogar_dados = i.sample(&mut rng);
     
-    if throw == 7 {
-        println!("Você tirou {}.", throw);
+    if jogar_dados == 7 {
+        println!("Você tirou {}.", jogar_dados);
         println!("Você tirou 7 antes de tirar {} e perdeu!!\n", x);
-    } else if x == throw {
-        println!("Você tirou {} novamente.", throw);
+    } else if x == jogar_dados {
+        println!("Você tirou {} novamente.", jogar_dados);
         println!("Você venceu!!\n");
         } else {
-                println!("Você tirou {}", throw);
+                println!("Você tirou {}", jogar_dados);
                 segunda_jogada(x);
             }
 }
@@ -67,7 +67,7 @@ fn main() {
     //Loop principal do jogo:
     loop{
     //Entrada de dados do usuário:
-        println!("Digite 'y' para jogar, 'n' para sair ou '!' para sair");
+        println!("Digite 'y' para jogar, 'n' para sair ou '!' para ver as regras:");
         escolha = String::new();
         io::stdin().read_line(&mut escolha).expect("Erro ao criar string.");
         escolha = escolha.trim().parse().ok().expect("Erro,");
