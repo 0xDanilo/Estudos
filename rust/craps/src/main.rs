@@ -8,14 +8,15 @@ Seu objetivo agora é continuar jogando os dados até tirar este número novamen
 Você perde, no entanto, se tirar um 7 antes de tirar este Ponto novamente.
 */
 
-//Dependências
+// Dependências
 use rand::distributions::{Distribution, Uniform};
 use std::io;
 
+// Funções para o jogo
 fn jogar(){
     print!("\x1B[2J\x1B[1;1H");
     // Gera números aleatórios utilizando a Distruibuição
-    //Uniforme
+    // Uniforme
     let mut rng = rand::thread_rng();
     let i = Uniform::from(2..12);
     let jogar_dados = i.sample(&mut rng);
@@ -47,8 +48,9 @@ fn segunda_jogada(x: i32) {
             }
 }
 
-
 fn mostrar_regras() {
+    print!("\x1B[2J\x1B[1;1H"); 
+
     println!("As regras do jogo são:
     Dois dados são rolados a cada jogada.
     Se você tirar 7 ou 11, você venceu.
@@ -57,20 +59,21 @@ fn mostrar_regras() {
     Porém! Se achar 7 antes de achar o par correspondente, você perde.\n");
 }
 
+// Função principal
 fn main() {
-    //Variável
+    // Variável
     let mut escolha;
 
-    //Essa linha limpa a tela e coloca o cursor no topo 
+    // Essa linha limpa a tela e coloca o cursor no topo 
     print!("\x1B[2J\x1B[1;1H"); 
     
-    //Loop principal do jogo:
+    // Loop principal do jogo:
     loop{
-    //Entrada de dados do usuário:
+    // Entrada de dados do usuário:
         println!("Digite 'y' para jogar, 'n' para sair ou '!' para ver as regras:");
         escolha = String::new();
         io::stdin().read_line(&mut escolha).expect("Erro ao criar string.");
-        escolha = escolha.trim().parse().ok().expect("Erro,");
+        escolha = escolha.trim().parse().ok().expect("Erro ao ler string.");
 
         if escolha == "n" {
             break;
@@ -81,8 +84,5 @@ fn main() {
         if escolha == "y"{
             jogar();
         }
-
     }
-
-    
 }
