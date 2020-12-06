@@ -4,7 +4,7 @@
 // Dependências
 const FETCH = require("node-fetch");
 // Entrada de dados:
-const readline = require('readline').createInterface({
+const LER_LINHA = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
 });
@@ -23,7 +23,7 @@ async function infoUsuario(usuario) {
   }
   
 // Entrada de Dados do usuário:
-  readline.question('Digite o nome do usuário: ', name => {
+  LER_LINHA.question('Digite o nome do usuário: ', name => {
     infoUsuario(name);
-    readline.close();
+    LER_LINHA.close();
   });
