@@ -4,13 +4,11 @@
     - Para executar: node Node_EntradaDados.js
 */
 
-
 const leiaLinha = require("readline");
 const entradaDados = leiaLinha.createInterface({
     input: process.stdin,
     output: process.stdout
 });
-
 
 let idades = new Map();
 
