@@ -25,17 +25,17 @@ um_meio = Fraction(1,2)
 onze_dois = Fraction(11,2)
 sete_dois = Fraction(7,2)
 
-# Desse ponto em diante ocorrem as tranformações 
-# a fim de simplificar a matriz:
-segunda_linha = (-2* primeira_linha) + segunda_linha
-terceira_linha = (-3*primeira_linha) + terceira_linha
-segunda_linha = um_meio*segunda_linha
-terceira_linha = ((-3*segunda_linha)+terceira_linha) * -2
-primeira_linha = (-segunda_linha)+primeira_linha
-primeira_linha = (-onze_dois*terceira_linha) + primeira_linha
-segunda_linha = (sete_dois*terceira_linha) + segunda_linha 
+# Desse ponto em diante ocorrem as transformações 
+# a fim de simplificar a matriz e resolver as equações:
+segunda_linha = (-2 * primeira_linha) + segunda_linha
+terceira_linha = (-3 * primeira_linha) + terceira_linha
+segunda_linha = um_meio * segunda_linha
+terceira_linha = ((-3 * segunda_linha)+terceira_linha) * -2
+primeira_linha = (-segunda_linha) + primeira_linha
+primeira_linha = (-onze_dois * terceira_linha) + primeira_linha
+segunda_linha = (sete_dois * terceira_linha) + segunda_linha 
 
-# Monta a matriz com o resultado das tranformações:
+# Monta a matriz com o resultado das transformações:
 matriz_transformada = np.array([primeira_linha,
                                 segunda_linha,
                                 terceira_linha])
@@ -43,4 +43,6 @@ matriz_transformada = np.array([primeira_linha,
 ## Arredondando as frações:
 # O array foi convertido para tipo inteiro antes do arredondamento.
 matriz_final = np.around(matriz_transformada.astype(np.int))
+
+# Exibe o resultado final
 print(f'\nMatriz final:\n{matriz_final}')
