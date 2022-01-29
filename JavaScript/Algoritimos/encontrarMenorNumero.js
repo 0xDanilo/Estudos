@@ -13,4 +13,4 @@ function encontrarMenorNumero (array) {
 return menorNumero;
 }
   
-console.log("O menor elemento no array é ", encontrarMenorElemento(array_aleatorio));
+console.log("O menor elemento no array é ", encontrarMenorNumero(array_aleatorio));
