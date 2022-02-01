@@ -13,6 +13,7 @@
 !*.h
 !*makefile
 !*.java
+!*.html
 !*/
 
 *JavaScript/node/node_modules
