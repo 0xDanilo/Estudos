@@ -14,6 +14,7 @@
 !*makefile
 !*.java
 !*.html
+!*.css
 !*/
 
 *JavaScript/node/node_modules
