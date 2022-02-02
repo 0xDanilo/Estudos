@@ -4,93 +4,15 @@
   <title>Hello, Ethers!</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script type="module">
-      import { ethers } from "./ethers-5.1.esm.min.js";
-      //const ethers = require('ethers')
-      
-      // Conecta o ocbjeto window.ethereum injetado pela Metamask com a API Ethers.js
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-
-      const GREETER_ADDRESS = '0xE0282e76237B8eB19A5D08e1741b8b3e2691Dadd';
-      const GREETER_ABI = '[{"inputs":[{"internalType":"string","name":"_greeting","type":"string"}],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[],"name":"greet","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"string","name":"_greeting","type":"string"}],"name":"setGreeting","outputs":[],"stateMutability":"nonpayable","type":"function"}]';
-
-      //Função para capitalizar a primeira letra das strings que retornaram dos objetos
-      function primeiraLetraMaiuscula(string) {
-         return string.charAt(0).toUpperCase() + string.slice(1);
-      }
-
-      //Função que interage com um contrato na rede Ropstein
-      async function getGreeting() {
-
-        // Connect to the greeter contract.
-        const greeterContract = new ethers.Contract(GREETER_ADDRESS, GREETER_ABI, provider);
-
-        // Call the greet() smart contract function.
-        const greeting = await greeterContract.greet();
-
-        // Write the greeting result to the DOM.
-        document.getElementById('output').innerHTML = greeting;
-
-      }
-      // A funcão aqui está comentada, caso queira testá-la, mude a metamask para a rede Ropstein.
-     // getGreeting();
-
-      async function explorandoEthersAPI(){
-        //Explorando Ethers.js
-
-        //Recupera o número do ultimo:
-        const numeroUltimoBloco = await provider.getBlockNumber();
-        document.getElementById('numeroUltimoBloco').innerHTML = numeroUltimoBloco;
-
-        //Confere se a rede está conectada:
-        const statusDeRede = await ethereum.isConnected();
-        if (statusDeRede == true){
-          document.getElementById('statusDeRede').innerHTML = "Conectado";
-        } else {
-          document.getElementById('statusDeRede').innerHTML = "Desconectado";          
-        }
-
-        //Carrega as informações da rede atual (Ropstein)
-        const infoRedeAtual =  await provider.getNetwork();
-        //Aqui o retorno é convertido para uma string e escrito no HTML:
-        document.getElementById('infoRedeAtual').innerHTML = JSON.stringify(infoRedeAtual);
-        //Capitaliza a primeira letra da propriedade "name" do objeto "infoRedeAtual" e armazena na constante:
-        const nomeRede = primeiraLetraMaiuscula(infoRedeAtual.name)
-        //Escreve no HTML o nome da rede
-        document.getElementById('nomeRede').innerHTML = nomeRede;
-
-        //Chamada ao ENS Resolver":
-        const ensResolver =  await provider.lookupAddress("0x5555763613a12D8F3e73be831DFf8598089d3dCa");
-
-        if (ensResolver == null){
-          document.getElementById('ensResolver').innerHTML = "Endereço não encontrado na rede "+nomeRede+".";
-        } else {
-          document.getElementById('ensResolver').innerHTML = ensResolver;
-        }
-
-        //Escreve o retorno console:
-        console.log(infoRedeAtual);
-        console.log(nomeRede);
-        console.log(statusDeRede);
-        console.log(numeroUltimoBloco);
-        console.log(ensResolver);
-      }
-
-      explorandoEthersAPI();
-    
-  </script>
+  <script type="module" src="funcoes.js"></script>
+  <link rel="stylesheet" href="estilo.css">
   </head>
   <body>
-    <h2>
-      <div id="output">
-      </div>
-    </h2>
-
-    <h2>Informações da rede Atual: <span id="infoRedeAtual"></span> </h2>
-    <h2>Conectado a rede Ethereum: <span id="statusDeRede"></span></h2>
-    <h2>O nome da rede atual é: <span id="nomeRede"></span></h2>
-    <h2>Numero do ultimo bloco minerado: <span id="numeroUltimoBloco"></span> </h2>
-    <h2>Retorno do ENS: <span id="ensResolver"></span></h2>
-
+    <div class="centralizar">
+      <h2>Conectado a rede Ethereum: <span id="statusDeRede"></span></h2>
+      <h2>O nome da rede atual é: <span id="nomeRede" class="capitalizar"></span></h2>
+      <h2>Numero do ultimo bloco minerado: <span id="numeroUltimoBloco"></span></h2>
+      <h2>Retorno do ENS: <span id="ensResolver"></span></h2>
+    </div>
   </body>
 </html>
