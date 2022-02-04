@@ -17,5 +17,4 @@
 !*.css
 !*/
 
-*JavaScript/node/node_modules
-ola-eth/ethers-5.1.esm.min.js
+ 
