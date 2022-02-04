@@ -14,6 +14,6 @@ body {
     justify-content: space-evenly;
 }
 
-.capitalizar{
+.nomeRede{
     text-transform: capitalize;
 }
