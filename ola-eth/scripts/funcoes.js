@@ -1,4 +1,4 @@
-import { ethers } from "./ethers-5.1.esm.min.js";
+import { ethers, utils } from "./ethers-5.5.4.esm.min.js";
 //const ethers = require('ethers')
       
 //Conecta o ocbjeto window.ethereum injetado pela Metamask com a API Ethers.js
@@ -9,6 +9,7 @@ const DOMnumeroUltimoBloco = document.querySelector('.numeroUltimoBloco');
 const DOMstatusRede = document.querySelector('.statusDeRede');
 const DOMnomeRede = document.querySelector('.nomeRede');
 const DOMensResolver = document.querySelector('.ensResolver');
+const DOMtarifaMedia = document.querySelector('.tarifaMedia');
 
 //Explorando Ethers.js
 async function explorandoEthersAPI(){
@@ -43,8 +44,13 @@ async function explorandoEthersAPI(){
       DOMensResolver.textContent = ensResolver;
     }
 
-    let balance = await provider.getBalance("ricmoo.eth");
-    let ExBlock = await provider.getBlock(numeroUltimoBloco);
+    const tarifaMedia = Math.floor(utils.formatUnits(await provider.getGasPrice(), "gwei"));
+    DOMtarifaMedia.textContent = tarifaMedia;
+
+    const tarifaNova = await provider.getFeeData();
+
+
+   
 
     //Escreve o retorno console para debug:
     console.log(infoRedeAtual);
@@ -52,8 +58,8 @@ async function explorandoEthersAPI(){
     console.log(statusDeRede);
     console.log(numeroUltimoBloco);
     console.log(ensResolver);
-    console.log(ethers.utils.formatEther(balance));
-    console.log(Date(ExBlock.timestamp));
+    console.log(tarifaMedia);
+    console.log(utils.formatUnits(tarifaNova.maxFeePerGas, 'gwei'));
   }
-
+  
   explorandoEthersAPI();
