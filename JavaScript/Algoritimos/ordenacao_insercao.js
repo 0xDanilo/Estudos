@@ -21,5 +21,3 @@ return array_de_entrada;
 }
 
 console.log(`Array ordenado: [${ordenacao_insercao(array_de_teste)}]`);
-
-
